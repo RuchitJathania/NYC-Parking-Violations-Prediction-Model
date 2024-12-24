@@ -32,8 +32,8 @@ The dataset was sourced from [NYC OpenData](https://data.cityofnewyork.us/City-G
 
 - **Categorical vs. Numerical Features**: Most features are categorical, with limited numerical data.
 
-### Figure 1: Jupyter Lab Output of Initial Dataset
 ![Figure 1](images/fig1.jpeg)
+### Figure 1: Jupyter Lab Output of Initial Dataset
 
 ---
 
@@ -52,7 +52,8 @@ The dataset was sourced from [NYC OpenData](https://data.cityofnewyork.us/City-G
 ### Improvements in This Project:
 - **Cyclic Encoding for Time**: Encoded `Hour of Day` as sine and cosine.
 - **Fine Amount Prediction**: Predicted fines directly for better accuracy and utility.
-
+- **Reduced Categorical Parameters**: Used 'Street Code' instead of 'Street Name', did not use 'Issuer Precinct'.
+- **Dorpped NaN Values in Samples**: Reduced the skew of data to mode values for more robust prediction.
 ---
 
 ## 🔍 Feature Selection and Preprocessing
@@ -73,8 +74,8 @@ The dataset was sourced from [NYC OpenData](https://data.cityofnewyork.us/City-G
 3. **Dropping Missing Values**: Removed rows with NaN values to avoid overfitting.
 4. **Cyclic Encoding**: Encoded `Hour of Day` as sine and cosine for temporal representation.
 
-### Figure 2: Feature Selection, Encoding, and Normalization
 ![Figure 2](images/fig2.jpeg)
+### Figure 2: Feature Selection, Encoding, and Normalization
 
 ---
 
@@ -90,25 +91,25 @@ A **Feedforward Neural Network** was built using TensorFlow/Keras:
 - **Optimizer**: Adam.
 - **Loss Function**: Categorical Cross-Entropy.
 
-### Figure 3: Neural Network Model Code
 ![Figure 3](images/fig3.jpeg)
+### Figure 3: Neural Network Model Code
 
 ---
 
 ## 📈 Training and Results
 
 ### **Violation Code Prediction**
-- **Accuracy**: 58.43%.
+- **Accuracy**: 58.43%, a 31% Improvement from Downey's model.
 - **Revenue Prediction**:
   - Predicted Revenue: **$34,944,600**.
   - Actual Revenue: **$34,036,230**.
   - Error: **~5%**.
 
-### Figure 4: Violation Code Prediction Accuracy
 ![Figure 4](images/fig4.jpeg)
+### Figure 4: Violation Code Prediction Accuracy
 
-### Figure 5: Violation Code Loss
 ![Figure 5](images/fig5.jpeg)
+### Figure 5: Violation Code Loss
 
 ---
 
@@ -119,11 +120,12 @@ A **Feedforward Neural Network** was built using TensorFlow/Keras:
   - Actual Revenue: **$34,036,230**.
   - Error: **0.42%**.
 
-### Figure 6: Fine Amount Prediction Accuracy
 ![Figure 6](images/fig6.jpeg)
+### Figure 6: Fine Amount Prediction Accuracy
 
-### Figure 7: Fine Amount Loss
+
 ![Figure 7](images/fig7.jpeg)
+### Figure 7: Fine Amount Loss
 
 ---
 
@@ -154,3 +156,15 @@ Both models provided accurate revenue predictions:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/NYC-Parking-Violations-Prediction-Model.git
+
+2. Go to project directory:
+   ```bash
+   cd NYC-Parking-Violations-Prediction-Model
+
+3. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+4. To run training script:
+   ```bash
+   python main.py
