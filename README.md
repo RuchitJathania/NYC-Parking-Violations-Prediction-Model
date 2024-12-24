@@ -154,18 +154,3 @@ Both models provided accurate revenue predictions:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/NYC-Parking-Violations-Prediction-Model.git
-
-
-2. Go to project directory:
-   ```bash
-   cd NYC-Parking-Violations-Prediction-Model
-
-3. Install Dependencies:
-   ```bash
-   pip install -r requirements.txt
-
-4. To run training script:
-   ```bash
-   python main.py
-
-Or, you can directly predict on the saved neural network models
